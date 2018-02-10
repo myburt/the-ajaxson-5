@@ -19,17 +19,19 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
     
     // get the user's input text from the DOM
-    var searchQuery = ""; // TODO should be e.g. "dance"
+    var searchQuery = event.currentTarget[0].value; // TODO should be e.g. "dance"
 
     // configure a few parameters to attach to our request
     var params = { 
         api_key: "dc6zaTOxFJmzC", 
-        tag : "" // TODO should be e.g. "jackson 5 dance"
+        tag : "jackson 5 ".concat(searchQuery)  // TODO should be e.g. "jackson 5 dance"
     };
     
+    var imageForGif = $("#gif");
+
     // make an ajax request for a random GIF
     $.ajax({
-        url: "", // TODO where should this request be sent?
+        url: "https://api.giphy.com/v1/gifs/random", // TODO where this request is sent?
         data: params, // attach those extra parameters onto the request
         success: function(response) {
             // if the response comes back successfully, the code in here will execute.
@@ -40,7 +42,9 @@ function fetchAndDisplayGif(event) {
             
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
+            imageForGif[0].src  = response.data.image_url;
             // 2. hide the feedback message and display the image
+            setGifLoadedStatus(true);
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function
@@ -51,9 +55,10 @@ function fetchAndDisplayGif(event) {
         }
     });
     
-    // TODO
     // give the user a "Loading..." message while they wait
-    
+    imageForGif[0].src  = ""; //remove old Gif
+    $("#feedback").text("Please Wait while we load the Gif");
+    $("#feedback").attr("hidden", false);
 }
 
 
