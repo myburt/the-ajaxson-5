@@ -30,12 +30,13 @@
         <div class="card">
             <div class="card-header">
                 <label>Prove you are not a robot by filling in this sentence:</label>
-                <div class="input-group mb-3">
-                    <input class="form-control" name="tag" type="text" placeholder="e.g. 'dance'" />
+                <div class="input-group" id="answer-group">
+                    <input class="form-control" name="tag" type="text" id="answer" />
                     <div class="input-group-append">
-                        <span class="input-group-text">Jacksons are better than 1.</span>
+                        <span class="input-group-text" id="answer-bad-0">Jacksons are better than 1.</span>
                     </div>
                 </div>
+                <label id="answer-bad-1" class="error" hidden>no Gifs for you.</label>
             </div>
         </div>
         <button class="btn btn-primary" type="submit">Get my Gif!</button>
