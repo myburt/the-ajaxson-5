@@ -1,0 +1,15 @@
+.row{
+    margin-top: .5em;
+}
+
+.card{
+    margin: 1.5em;
+}
+
+.btn{
+    margin-left: 1.5em;
+}
+
+label{
+    font-weight: bold;
+}

@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>The AJAXson 5</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="request-gif.js"></script>
 </head>
+
 <body>
-    <h1>The AJAXson 5</h1>
+    <div class="container">
+        <h1>The AJAXson 5</h1>
 
-    <form id="form-gif-request" />
-        <label>What kind of Jackson 5 related gif do you want?</label>
-        <input name="tag" type="text" placeholder="e.g. 'dance'"/>
-        <input type="submit" value="Get my Gif!" />
-    </form>
 
-    <img id="gif" src="" hidden="true"/>
-    <p id="feedback" hidden="true`"></p>
+        <form id="form-gif-request" />
+        <div class="card">
+            <div class="card-header">
+                <div class="form-group">
+                    <label>What kind of Jackson 5 related gif do you want?</label>
+                    <input class="form-control" name="tag" type="text" placeholder="e.g. 'dance'" />
+                </div>
+            </div>
+        </div>
 
+        <div class="card">
+            <div class="card-header">
+                <label>Prove you are not a robot by filling in this sentence:</label>
+                <div class="input-group mb-3">
+                    <input class="form-control" name="tag" type="text" placeholder="e.g. 'dance'" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">Jacksons are better than 1.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Get my Gif!</button>
+        </form>
+
+        <div class="row">
+            <img id="gif" src="" hidden="true" class="img-fluid img-thumbnail mx-auto" />
+            <p id="feedback" hidden="true`"></p>
+        </div>
+    </div>
 </body>
+
 </html>
